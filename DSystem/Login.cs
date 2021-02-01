@@ -13,8 +13,22 @@ namespace DSystem
 {
     public partial class Login : Form
     {
+       /** private void DBConeection()
+        {
+            DBClass d = new DBClass();
+            string ConString = d.databaseConnection();
+            MySqlConnection dbconnect = new MySqlConnection(ConString);
+            try
+            {
+                dbconnect.Open();
+                MessageBox.Show("Connected!!");
+            }
+            catch (Exception e)
+            {
 
-        
+                MessageBox.Show(e.Message);
+            }
+        }**/
 
         MySqlConnection connection = new MySqlConnection("datasource=localhost; port=3306; username=root; password=; database= coopdb");
 
@@ -57,9 +71,9 @@ namespace DSystem
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `username` = @user and `Password` = @pass", db.GetConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `username` = @usn and `Password` = @pass", db.GetConnection());
 
-            command.Parameters.Add("@user", MySqlDbType.VarChar).Value = username;
+            command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = password;
 
             adapter.SelectCommand = command;
@@ -68,7 +82,10 @@ namespace DSystem
 
             if(table.Rows.Count>0)
             {
-                MessageBox.Show("Yes");
+                //MessageBox.Show("Yes");
+                this.Hide();
+                Form1 form1 = new Form1();
+                form1.Show();
             }
             else
             {

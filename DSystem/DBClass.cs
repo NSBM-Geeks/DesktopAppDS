@@ -9,6 +9,15 @@ namespace DSystem
 {
     class DBClass
     {
+
+      /*** public void databaseconnection()
+       {
+           string connection = "datasource=localhost; username=root; password=; database= coopdb";
+            return ConString;
+       }**/
+
+        
+        
         MySqlConnection connection = new MySqlConnection("datasource=localhost; port=3306; username=root; password=; database= coopdb");
 
         //Open connection

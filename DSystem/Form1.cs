@@ -105,6 +105,25 @@ namespace DSystem
         {
             _dragging = false;
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            
+            SidePanel.Height = button6.Height;
+            SidePanel.Top = button6.Top;
+
+            if (MessageBox.Show("Are you really want to Log Out?", "Confirmation!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Hide();
+                Login login = new Login();
+                login.Show();
+               
+            }
+            else
+            {
+                this.Activate();
+            }
+        }
     }
 
 
