@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,32 @@ namespace DSystem
 {
     class DBClass
     {
-        public String databaseConnection()
+        MySqlConnection connection = new MySqlConnection("datasource=localhost; port=3306; username=root; password=; database= coopdb");
+
+        //Open connection
+        public void OpenConnection()
         {
-            string ConString = "datasource=localhost; username=root; password=; database= coopdb";
-            return ConString;
+            if(connection.State == System.Data.ConnectionState.Closed)
+            {
+                connection.Open();
+            }
         }
+
+        //close connection
+        public void CloseConnection()
+        {
+            if (connection.State == System.Data.ConnectionState.Closed)
+            {
+                connection.Close();
+            }
+        }
+
+        public MySqlConnection GetConnection()
+        {
+            return connection;
+        }
+
+
+
     }
 }
