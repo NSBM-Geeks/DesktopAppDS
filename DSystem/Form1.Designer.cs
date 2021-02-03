@@ -45,6 +45,8 @@ namespace DSystem
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.addUsresUC1 = new DSystem.AddUsresUC();
             this.stockUC1 = new DSystem.StockUC();
             this.distributionUC1 = new DSystem.DistributionUC();
             this.ordersUC1 = new DSystem.OrdersUC();
@@ -58,6 +60,7 @@ namespace DSystem
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(39)))), ((int)(((byte)(36)))));
+            this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.SidePanel);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
@@ -75,7 +78,7 @@ namespace DSystem
             // 
             this.SidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
             this.SidePanel.ForeColor = System.Drawing.Color.Black;
-            this.SidePanel.Location = new System.Drawing.Point(3, 94);
+            this.SidePanel.Location = new System.Drawing.Point(3, 87);
             this.SidePanel.Name = "SidePanel";
             this.SidePanel.Size = new System.Drawing.Size(10, 59);
             this.SidePanel.TabIndex = 2;
@@ -88,7 +91,7 @@ namespace DSystem
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(14, 409);
+            this.button6.Location = new System.Drawing.Point(15, 448);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(185, 59);
             this.button6.TabIndex = 2;
@@ -105,7 +108,7 @@ namespace DSystem
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(14, 346);
+            this.button5.Location = new System.Drawing.Point(15, 328);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(185, 59);
             this.button5.TabIndex = 2;
@@ -122,7 +125,7 @@ namespace DSystem
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(14, 283);
+            this.button4.Location = new System.Drawing.Point(15, 268);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(185, 59);
             this.button4.TabIndex = 2;
@@ -139,7 +142,7 @@ namespace DSystem
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(14, 220);
+            this.button3.Location = new System.Drawing.Point(15, 208);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(185, 59);
             this.button3.TabIndex = 2;
@@ -156,7 +159,7 @@ namespace DSystem
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(14, 157);
+            this.button2.Location = new System.Drawing.Point(15, 148);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(185, 59);
             this.button2.TabIndex = 2;
@@ -173,7 +176,7 @@ namespace DSystem
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(14, 94);
+            this.button1.Location = new System.Drawing.Point(15, 88);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(185, 59);
             this.button1.TabIndex = 2;
@@ -277,6 +280,31 @@ namespace DSystem
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // button10
+            // 
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.Location = new System.Drawing.Point(15, 388);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(185, 59);
+            this.button10.TabIndex = 3;
+            this.button10.Text = "     Add Users";
+            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // addUsresUC1
+            // 
+            this.addUsresUC1.Location = new System.Drawing.Point(200, 86);
+            this.addUsresUC1.Name = "addUsresUC1";
+            this.addUsresUC1.Size = new System.Drawing.Size(803, 487);
+            this.addUsresUC1.TabIndex = 200;
+            this.addUsresUC1.Enter += new System.EventHandler(this.addUsresUC1_Enter);
+            // 
             // stockUC1
             // 
             this.stockUC1.Location = new System.Drawing.Point(200, 86);
@@ -309,6 +337,7 @@ namespace DSystem
             // 
             // WarehouseUC1
             // 
+            this.WarehouseUC1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
             this.WarehouseUC1.Location = new System.Drawing.Point(200, 85);
             this.WarehouseUC1.Name = "WarehouseUC1";
             this.WarehouseUC1.Size = new System.Drawing.Size(803, 483);
@@ -319,6 +348,7 @@ namespace DSystem
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1003, 573);
+            this.Controls.Add(this.addUsresUC1);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.stockUC1);
             this.Controls.Add(this.distributionUC1);
@@ -366,6 +396,8 @@ namespace DSystem
         private DistributionUC distributionUC1;
         private StockUC stockUC1;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private AddUsresUC addUsresUC1;
     }
 }
 

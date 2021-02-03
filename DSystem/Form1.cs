@@ -124,6 +124,18 @@ namespace DSystem
                 this.Activate();
             }
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            SidePanel.Height = button10.Height;
+            SidePanel.Top = button10.Top;
+            addUsresUC1.BringToFront();
+        }
+
+        private void addUsresUC1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

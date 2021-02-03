@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddUsresUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddUsresUC.Designer.cs">
+      <DependentUpon>AddUsresUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBClass.cs" />
     <Compile Include="DistributionUC.cs">
       <SubType>UserControl</SubType>
@@ -95,6 +101,9 @@
     <Compile Include="WarehouseUC.Designer.cs">
       <DependentUpon>WarehouseUC.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddUsresUC.resx">
+      <DependentUpon>AddUsresUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DistributionUC.resx">
       <DependentUpon>DistributionUC.cs</DependentUpon>
     </EmbeddedResource>
