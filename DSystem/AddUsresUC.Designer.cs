@@ -30,12 +30,12 @@ namespace DSystem
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtBoxFname = new System.Windows.Forms.TextBox();
-            this.txtBoxEmail = new System.Windows.Forms.TextBox();
-            this.txtBoxUname = new System.Windows.Forms.TextBox();
-            this.txtBoxPwd = new System.Windows.Forms.TextBox();
-            this.txtBoxPwdCon = new System.Windows.Forms.TextBox();
             this.btnCreateAcc = new System.Windows.Forms.Button();
+            this.txtBoxPwdCon = new System.Windows.Forms.TextBox();
+            this.txtBoxPwd = new System.Windows.Forms.TextBox();
+            this.txtBoxUname = new System.Windows.Forms.TextBox();
+            this.txtBoxEmail = new System.Windows.Forms.TextBox();
+            this.txtBoxFname = new System.Windows.Forms.TextBox();
             this.txtBoxLname = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +55,68 @@ namespace DSystem
             this.panel1.Size = new System.Drawing.Size(556, 447);
             this.panel1.TabIndex = 0;
             // 
+            // btnCreateAcc
+            // 
+            this.btnCreateAcc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(39)))), ((int)(((byte)(36)))));
+            this.btnCreateAcc.FlatAppearance.BorderSize = 0;
+            this.btnCreateAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateAcc.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateAcc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(240)))), ((int)(((byte)(221)))));
+            this.btnCreateAcc.Location = new System.Drawing.Point(50, 349);
+            this.btnCreateAcc.Name = "btnCreateAcc";
+            this.btnCreateAcc.Size = new System.Drawing.Size(450, 55);
+            this.btnCreateAcc.TabIndex = 7;
+            this.btnCreateAcc.Text = "CREATE ACCOUNT";
+            this.btnCreateAcc.UseVisualStyleBackColor = false;
+            // 
+            // txtBoxPwdCon
+            // 
+            this.txtBoxPwdCon.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPwdCon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
+            this.txtBoxPwdCon.Location = new System.Drawing.Point(50, 265);
+            this.txtBoxPwdCon.Name = "txtBoxPwdCon";
+            this.txtBoxPwdCon.Size = new System.Drawing.Size(450, 37);
+            this.txtBoxPwdCon.TabIndex = 6;
+            this.txtBoxPwdCon.Text = "confirm password";
+            this.txtBoxPwdCon.Enter += new System.EventHandler(this.txtBoxPwdCon_Enter);
+            this.txtBoxPwdCon.Leave += new System.EventHandler(this.txtBoxPwdCon_Leave);
+            // 
+            // txtBoxPwd
+            // 
+            this.txtBoxPwd.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
+            this.txtBoxPwd.Location = new System.Drawing.Point(50, 206);
+            this.txtBoxPwd.Name = "txtBoxPwd";
+            this.txtBoxPwd.Size = new System.Drawing.Size(450, 37);
+            this.txtBoxPwd.TabIndex = 5;
+            this.txtBoxPwd.Text = "Password";
+            this.txtBoxPwd.Enter += new System.EventHandler(this.txtBoxPwd_Enter);
+            this.txtBoxPwd.Leave += new System.EventHandler(this.txtBoxPwd_Leave);
+            // 
+            // txtBoxUname
+            // 
+            this.txtBoxUname.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxUname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
+            this.txtBoxUname.Location = new System.Drawing.Point(50, 149);
+            this.txtBoxUname.Name = "txtBoxUname";
+            this.txtBoxUname.Size = new System.Drawing.Size(450, 37);
+            this.txtBoxUname.TabIndex = 4;
+            this.txtBoxUname.Text = "Username";
+            this.txtBoxUname.Enter += new System.EventHandler(this.txtBoxUname_Enter);
+            this.txtBoxUname.Leave += new System.EventHandler(this.txtBoxUname_Leave);
+            // 
+            // txtBoxEmail
+            // 
+            this.txtBoxEmail.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
+            this.txtBoxEmail.Location = new System.Drawing.Point(50, 91);
+            this.txtBoxEmail.Name = "txtBoxEmail";
+            this.txtBoxEmail.Size = new System.Drawing.Size(450, 37);
+            this.txtBoxEmail.TabIndex = 3;
+            this.txtBoxEmail.Text = "Email Address";
+            this.txtBoxEmail.Enter += new System.EventHandler(this.txtBoxEmail_Enter);
+            this.txtBoxEmail.Leave += new System.EventHandler(this.txtBoxEmail_Leave);
+            // 
             // txtBoxFname
             // 
             this.txtBoxFname.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -67,66 +129,6 @@ namespace DSystem
             this.txtBoxFname.Enter += new System.EventHandler(this.txtBoxFname_Enter);
             this.txtBoxFname.Leave += new System.EventHandler(this.txtBoxFname_Leave);
             // 
-            // txtBoxEmail
-            // 
-            this.txtBoxEmail.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
-            this.txtBoxEmail.Location = new System.Drawing.Point(50, 91);
-            this.txtBoxEmail.Name = "txtBoxEmail";
-            this.txtBoxEmail.Size = new System.Drawing.Size(450, 37);
-            this.txtBoxEmail.TabIndex = 2;
-            this.txtBoxEmail.Text = "Email Address";
-            this.txtBoxEmail.Enter += new System.EventHandler(this.txtBoxEmail_Enter);
-            this.txtBoxEmail.Leave += new System.EventHandler(this.txtBoxEmail_Leave);
-            // 
-            // txtBoxUname
-            // 
-            this.txtBoxUname.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxUname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
-            this.txtBoxUname.Location = new System.Drawing.Point(50, 149);
-            this.txtBoxUname.Name = "txtBoxUname";
-            this.txtBoxUname.Size = new System.Drawing.Size(450, 37);
-            this.txtBoxUname.TabIndex = 3;
-            this.txtBoxUname.Text = "Username";
-            this.txtBoxUname.Enter += new System.EventHandler(this.txtBoxUname_Enter);
-            this.txtBoxUname.Leave += new System.EventHandler(this.txtBoxUname_Leave);
-            // 
-            // txtBoxPwd
-            // 
-            this.txtBoxPwd.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
-            this.txtBoxPwd.Location = new System.Drawing.Point(50, 206);
-            this.txtBoxPwd.Name = "txtBoxPwd";
-            this.txtBoxPwd.Size = new System.Drawing.Size(450, 37);
-            this.txtBoxPwd.TabIndex = 4;
-            this.txtBoxPwd.Text = "Password";
-            this.txtBoxPwd.Enter += new System.EventHandler(this.txtBoxPwd_Enter);
-            this.txtBoxPwd.Leave += new System.EventHandler(this.txtBoxPwd_Leave);
-            // 
-            // txtBoxPwdCon
-            // 
-            this.txtBoxPwdCon.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPwdCon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(180)))), ((int)(((byte)(77)))));
-            this.txtBoxPwdCon.Location = new System.Drawing.Point(50, 265);
-            this.txtBoxPwdCon.Name = "txtBoxPwdCon";
-            this.txtBoxPwdCon.Size = new System.Drawing.Size(450, 37);
-            this.txtBoxPwdCon.TabIndex = 5;
-            this.txtBoxPwdCon.Text = "Confirm Password";
-            // 
-            // btnCreateAcc
-            // 
-            this.btnCreateAcc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(39)))), ((int)(((byte)(36)))));
-            this.btnCreateAcc.FlatAppearance.BorderSize = 0;
-            this.btnCreateAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateAcc.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateAcc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(240)))), ((int)(((byte)(221)))));
-            this.btnCreateAcc.Location = new System.Drawing.Point(50, 349);
-            this.btnCreateAcc.Name = "btnCreateAcc";
-            this.btnCreateAcc.Size = new System.Drawing.Size(450, 55);
-            this.btnCreateAcc.TabIndex = 6;
-            this.btnCreateAcc.Text = "CREATE ACCOUNT";
-            this.btnCreateAcc.UseVisualStyleBackColor = false;
-            // 
             // txtBoxLname
             // 
             this.txtBoxLname.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -134,7 +136,7 @@ namespace DSystem
             this.txtBoxLname.Location = new System.Drawing.Point(278, 37);
             this.txtBoxLname.Name = "txtBoxLname";
             this.txtBoxLname.Size = new System.Drawing.Size(222, 37);
-            this.txtBoxLname.TabIndex = 1;
+            this.txtBoxLname.TabIndex = 2;
             this.txtBoxLname.Text = "Last Name";
             this.txtBoxLname.Enter += new System.EventHandler(this.txtBoxLname_Enter);
             this.txtBoxLname.Leave += new System.EventHandler(this.txtBoxLname_Leave);

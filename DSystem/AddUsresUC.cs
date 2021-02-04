@@ -66,12 +66,24 @@ namespace DSystem
 
         private void txtBoxPwd_Enter(object sender, EventArgs e)
         {
-
+            String password = txtBoxPwd.Text;
+            if(password.ToLower().Trim().Equals("password"))
+            {
+                txtBoxPwd.Text = "";
+                txtBoxPwd.UseSystemPasswordChar = true;
+                txtBoxPwd.ForeColor = Color.Black;
+            }
         }
 
         private void txtBoxPwd_Leave(object sender, EventArgs e)
         {
-
+            String password = txtBoxPwd.Text;
+            if (password.ToLower().Trim().Equals("password") || password.Trim().Equals(""))
+            {
+                txtBoxPwd.Text = "password";
+                txtBoxPwd.UseSystemPasswordChar = false;
+                txtBoxPwd.ForeColor = Color.Gray;
+            }
         }
 
         private void txtBoxEmail_Enter(object sender, EventArgs e)
@@ -82,6 +94,29 @@ namespace DSystem
         private void txtBoxEmail_Leave(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void txtBoxPwdCon_Enter(object sender, EventArgs e)
+        {
+            String cpassword = txtBoxPwdCon.Text;
+            if (cpassword.ToLower().Trim().Equals("confirm password"))
+            {
+                txtBoxPwd.Text = "";
+                txtBoxPwd.UseSystemPasswordChar = true;
+                txtBoxPwd.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtBoxPwdCon_Leave(object sender, EventArgs e)
+        {
+            String cpassword = txtBoxPwdCon.Text;
+            if (cpassword.ToLower().Trim().Equals("confirm password") || cpassword.Trim().Equals(""))
+            {
+                txtBoxPwdCon.Text = "confirm password";
+                txtBoxPwdCon.UseSystemPasswordChar = false;
+                txtBoxPwdCon.ForeColor = Color.Gray;
+            }
         }
     }
 }
