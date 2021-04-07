@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FireSharp.Config;
+using FireSharp.Response;
+using FireSharp.Interfaces;
 
 namespace DSystem
 {
@@ -17,36 +20,23 @@ namespace DSystem
             InitializeComponent();
         }
 
+      
+
         private void txtBoxFname_Enter(object sender, EventArgs e)
         {
-            String fname = txtBoxFname.Text;
-            if(fname.ToLower().Trim().Equals("First Name"))
-            {
-                txtBoxFname.Text = "";
-                txtBoxFname.ForeColor = Color.Black;
-            }
+         
         }
 
         private void txtBoxFname_Leave(object sender, EventArgs e)
         {
-            String fname = txtBoxFname.Text;
-            if (fname.ToLower().Trim().Equals("First Name"))
-            {
-                txtBoxFname.Text = "First Name";
-                txtBoxFname.ForeColor = Color.Gray;
-            }
+           
         }
 
        
 
         private void txtBoxLname_Enter(object sender, EventArgs e)
         {
-            String lname = txtBoxLname.Text;
-            if (lname.Equals("Last Name"))
-            {
-                txtBoxFname.Text = "";
-                txtBoxFname.ForeColor = Color.Black;
-            }
+           
         }
 
         private void txtBoxLname_Leave(object sender, EventArgs e)
@@ -66,24 +56,12 @@ namespace DSystem
 
         private void txtBoxPwd_Enter(object sender, EventArgs e)
         {
-            String password = txtBoxPwd.Text;
-            if(password.ToLower().Trim().Equals("password"))
-            {
-                txtBoxPwd.Text = "";
-                txtBoxPwd.UseSystemPasswordChar = true;
-                txtBoxPwd.ForeColor = Color.Black;
-            }
+           
         }
 
         private void txtBoxPwd_Leave(object sender, EventArgs e)
         {
-            String password = txtBoxPwd.Text;
-            if (password.ToLower().Trim().Equals("password") || password.Trim().Equals(""))
-            {
-                txtBoxPwd.Text = "password";
-                txtBoxPwd.UseSystemPasswordChar = false;
-                txtBoxPwd.ForeColor = Color.Gray;
-            }
+          
         }
 
         private void txtBoxEmail_Enter(object sender, EventArgs e)
@@ -99,24 +77,76 @@ namespace DSystem
 
         private void txtBoxPwdCon_Enter(object sender, EventArgs e)
         {
-            String cpassword = txtBoxPwdCon.Text;
-            if (cpassword.ToLower().Trim().Equals("confirm password"))
-            {
-                txtBoxPwd.Text = "";
-                txtBoxPwd.UseSystemPasswordChar = true;
-                txtBoxPwd.ForeColor = Color.Black;
-            }
+           
         }
 
         private void txtBoxPwdCon_Leave(object sender, EventArgs e)
         {
-            String cpassword = txtBoxPwdCon.Text;
-            if (cpassword.ToLower().Trim().Equals("confirm password") || cpassword.Trim().Equals(""))
+          
+        }
+
+        private void btnCreateAcc_Click(object sender, EventArgs e)
+        {
+            AddUsersUC std = new AddUsersUC()
             {
-                txtBoxPwdCon.Text = "confirm password";
-                txtBoxPwdCon.UseSystemPasswordChar = false;
-                txtBoxPwdCon.ForeColor = Color.Gray;
+                FirstName = txtBoxFname.Text,
+                LastName = txtBoxLname.Text,
+                UserName = txtBoxUname.Text,
+                Email = txtBoxEmail.Text,
+                
+                Password = txtBoxPwd.Text,
+                
+            };
+
+            SetResponse set = client.Set("Users/" + txtBoxUname.Text, std);
+            
+            MessageBox.Show("data inserted successfully");
+
+
+
+
+        }
+
+
+        IFirebaseConfig fcon = new FirebaseConfig()
+        {
+            AuthSecret = "mE0UoopgWaiJTaJIysrSBRIXu7IDwok2ZAECGT6K",
+            BasePath = "https://dsystem-c9b50-default-rtdb.firebaseio.com/",
+        };
+
+        IFirebaseClient client;
+
+
+
+        private void AddUsresUC_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                client = new FireSharp.FirebaseClient(fcon);
+            }
+            catch
+            {
+                MessageBox.Show("error!");
             }
         }
+
+       
+
+        private void btnClear_Click_1(object sender, EventArgs e)
+        {
+            clearText();
+        }
+
+        public void clearText()
+        {
+            txtBoxFname.Text = "";
+            txtBoxLname.Text = "";
+            txtBoxEmail.Text = "";
+            txtBoxUname.Text = "";
+            txtBoxPwd.Text = "";
+
+            MessageBox.Show("Text Boxes Cleared!");
+        }
     }
+
 }

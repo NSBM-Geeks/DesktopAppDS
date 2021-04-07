@@ -31,6 +31,7 @@ namespace DSystem
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
             this.SidePanel = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@ namespace DSystem
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.addUsresUC1 = new DSystem.AddUsresUC();
             this.stockUC1 = new DSystem.StockUC();
             this.distributionUC1 = new DSystem.DistributionUC();
@@ -73,6 +73,23 @@ namespace DSystem
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 573);
             this.panel1.TabIndex = 0;
+            // 
+            // button10
+            // 
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.Location = new System.Drawing.Point(15, 388);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(185, 59);
+            this.button10.TabIndex = 3;
+            this.button10.Text = "     Add Users";
+            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // SidePanel
             // 
@@ -280,29 +297,13 @@ namespace DSystem
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // button10
-            // 
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(15, 388);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(185, 59);
-            this.button10.TabIndex = 3;
-            this.button10.Text = "     Add Users";
-            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
             // addUsresUC1
             // 
             this.addUsresUC1.Location = new System.Drawing.Point(200, 86);
             this.addUsresUC1.Name = "addUsresUC1";
             this.addUsresUC1.Size = new System.Drawing.Size(803, 487);
             this.addUsresUC1.TabIndex = 200;
+            this.addUsresUC1.Load += new System.EventHandler(this.addUsresUC1_Load);
             this.addUsresUC1.Enter += new System.EventHandler(this.addUsresUC1_Enter);
             // 
             // stockUC1

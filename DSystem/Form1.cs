@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FireSharp.Config;
+using FireSharp.Response;
+using FireSharp.Interfaces;
 
 namespace DSystem
 {
@@ -136,6 +139,19 @@ namespace DSystem
         {
 
         }
+
+        private void addUsresUC1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        
+
+
+
+
+
     }
 
 

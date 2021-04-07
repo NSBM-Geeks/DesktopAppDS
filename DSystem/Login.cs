@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,29 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FireSharp.Config;
+using FireSharp.Response;
+using FireSharp.Interfaces;
 
 namespace DSystem
 {
     public partial class Login : Form
     {
-       /** private void DBConeection()
-        {
-            DBClass d = new DBClass();
-            string ConString = d.databaseConnection();
-            MySqlConnection dbconnect = new MySqlConnection(ConString);
-            try
-            {
-                dbconnect.Open();
-                MessageBox.Show("Connected!!");
-            }
-            catch (Exception e)
-            {
-
-                MessageBox.Show(e.Message);
-            }
-        }**/
-
-        MySqlConnection connection = new MySqlConnection("datasource=localhost; port=3306; username=root; password=; database= coopdb");
+       
 
 
 
@@ -39,6 +24,14 @@ namespace DSystem
         {
             InitializeComponent();
         }
+
+        IFirebaseConfig fcon = new FirebaseConfig()
+        {
+            AuthSecret = "mE0UoopgWaiJTaJIysrSBRIXu7IDwok2ZAECGT6K",
+            BasePath = "https://dsystem-c9b50-default-rtdb.firebaseio.com/",
+        };
+
+        IFirebaseClient client;
 
         private void button8_Click(object sender, EventArgs e)
         {
@@ -62,36 +55,42 @@ namespace DSystem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            DBClass db = new DBClass();
+            FirebaseResponse res = client.Get(@"Users/" + txtUname.Text);
+            MyUser ResUser = res.ResultAs<MyUser>();// database result
 
-            String username = txtUname.Text;
-            String password = txtPwd.Text;
-
-            DataTable table = new DataTable();
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `username` = @usn and `Password` = @pass", db.GetConnection());
-
-            command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;
-            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = password;
-
-            adapter.SelectCommand = command;
-
-            adapter.Fill(table);
-
-            if(table.Rows.Count>0)
+            MyUser CurUser = new MyUser() // USER GIVEN INFO
             {
-                //MessageBox.Show("Yes");
-                this.Hide();
-                Form1 form1 = new Form1();
-                form1.Show();
+                UserName = txtUname.Text,
+                Password = txtPwd.Text
+            };
+
+            if (MyUser.IsEqual(ResUser, CurUser))
+            {
+                Form1 real = new Form1();
+                real.ShowDialog();
             }
+
             else
             {
-                MessageBox.Show("No");
+                MyUser.ShowError();
             }
+        }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                client = new FireSharp.FirebaseClient(fcon);
+            }
+            catch
+            {
+                MessageBox.Show("error!");
+            }
         }
     }
 }
